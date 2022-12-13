@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildParagraph(),
+              _buildText(),
               _buildLine(),
               _buildStack(),
             ],
@@ -58,14 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildParagraph() {
+  Widget _buildText() {
     return Column(
       children: [
         //row 1
-        Center(
-          child: _buildTitle('Hàng thứ nhất'),
-        ),
-        const SizedBox(height: 10),
+        _buildTitle('Hàng thứ nhất'),
 
         //row 2
         Row(
@@ -75,24 +72,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(child: _buildTitle('Hàng thứ hai 2'))
           ],
         ),
-        // const SizedBox(height: 10),
 
         //row 3
-        const Center(
-          child: Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: 'Hàng thứ 3',
-                  style: TextStyle(color: Colors.grey),
-                ),
-                TextSpan(
-                  text: ' bold 1',
-                  style: TextStyle(
-                      color: Colors.yellow, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+        const Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: 'Hàng thứ 3',
+                style: TextStyle(color: Colors.grey),
+              ),
+              TextSpan(
+                text: ' bold 1',
+                style: TextStyle(
+                    color: Colors.yellow, fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
         ),
       ],
